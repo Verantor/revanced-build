@@ -68,9 +68,11 @@ then
     echo "Building Root APK"
     java -jar revanced-cli.jar -m revanced-integrations.apk -b revanced-patches.jar --mount --experimental \
                                -e microg-support \
+                               -e amoled -e custom-branding -e disable-fullscreen-panels -e hide-cast-button -e hide-watermark -e custom-playback-speed \
                                -a com.google.android.youtube.apk -o build/revanced-root.apk
     echo "Building Non-root APK"
     java -jar revanced-cli.jar -m revanced-integrations.apk -b revanced-patches.jar --experimental \
+                               -e amoled -e custom-branding -e disable-fullscreen-panels -e hide-cast-button -e hide-watermark -e custom-playback-speed \
                                -a com.google.android.youtube.apk -o build/revanced-nonroot.apk
 else
     echo "Cannot find YouTube APK, skipping build"
@@ -88,7 +90,7 @@ then
                                -a com.google.android.apps.youtube.music.apk -o build/revanced-music-root.apk
     echo "Building Non-root APK"
     java -jar revanced-cli.jar -b revanced-patches.jar --experimental \
-                               -e amoled -e custom-branding -e disable-fullscreen-panels -e hide-cast-button -e hide-watermark -e custom-playback-speed \
+                               -e tasteBuilder-remover -e exclusive-audio-playback \
                                -a com.google.android.apps.youtube.music.apk -o build/revanced-music-nonroot.apk
 else
     echo "Cannot find YouTube Music APK, skipping build"
