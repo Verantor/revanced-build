@@ -61,7 +61,7 @@ echo "************************************"
 
 mkdir -p build
 # Obtained from: revanced-patches-1.9.1
-available_patches="-e amoled -e custom-branding -e disable-fullscreen-panels -e hide-cast-button -e tasteBuilder-remover"
+available_patches="-e amoled -e custom-branding -e disable-fullscreen-panels -e hide-cast-button -e hide-watermark -e custom-playback-speed -e tasteBuilder-remover"
 
 if [ -f "com.google.android.youtube.apk" ]
 then
