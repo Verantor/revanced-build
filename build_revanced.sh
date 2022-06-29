@@ -6,7 +6,7 @@
 # Vanced microG 0.2.24.220220
 
 YTM_VERSION="5.03.50"
-YT_VERSION="17.24.35"
+YT_VERSION="17.25.34"
 VMG_VERSION="0.2.24.220220"
 
 # Artifacts associative array aka dictionary
@@ -61,7 +61,7 @@ echo "************************************"
 
 mkdir -p build
 # Obtained from: revanced-patches-1.9.1
-# available_patches="-e amoled -e minimized-playback -e disable-create-button -e premium-heading -e custom-branding -e disable-shorts-button -e disable-fullscreen-panels -e old-quality-layout -e hide-cast-button -e microg-support -e general-ads -e video-ads -e seekbar-tapping -e upgrade-button-remover -e tasteBuilder-remover -e background-play -e exclusive-audio-playback -e codecs-unlock"
+available_patches="-e amoled -e custom-branding -e old-quality-layout -e hide-cast-button -e upgrade-button-remover -e tasteBuilder-remover -e background-play -e exclusive-audio-playback -e codecs-unlock"
 
 if [ -f "com.google.android.youtube.apk" ]
 then
