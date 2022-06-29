@@ -6,7 +6,7 @@
 # Vanced microG 0.2.24.220220
 
 YTM_VERSION="5.03.50"
-YT_VERSION="17.24.35"
+YT_VERSION="17.25.34"
 VMG_VERSION="0.2.24.220220"
 
 # Artifacts associative array aka dictionary
@@ -61,16 +61,18 @@ echo "************************************"
 
 mkdir -p build
 # Obtained from: revanced-patches-1.9.1
-# available_patches="-e amoled -e minimized-playback -e disable-create-button -e premium-heading -e custom-branding -e disable-shorts-button -e disable-fullscreen-panels -e old-quality-layout -e hide-cast-button -e microg-support -e general-ads -e video-ads -e seekbar-tapping -e upgrade-button-remover -e tasteBuilder-remover -e background-play -e exclusive-audio-playback -e codecs-unlock"
+available_patches="-e amoled -e custom-branding -e disable-fullscreen-panels -e hide-cast-button -e hide-watermark -e custom-playback-speed -e tasteBuilder-remover -e exclusive-audio-playback"
 
 if [ -f "com.google.android.youtube.apk" ]
 then
     echo "Building Root APK"
-    java -jar revanced-cli.jar -m revanced-integrations.apk -b revanced-patches.jar --mount \
+    java -jar revanced-cli.jar -m revanced-integrations.apk -b revanced-patches.jar --mount --experimental \
                                -e microg-support \
+                               -e amoled -e custom-branding -e disable-fullscreen-panels -e hide-cast-button -e hide-watermark -e custom-playback-speed \
                                -a com.google.android.youtube.apk -o build/revanced-root.apk
     echo "Building Non-root APK"
-    java -jar revanced-cli.jar -m revanced-integrations.apk -b revanced-patches.jar  \
+    java -jar revanced-cli.jar -m revanced-integrations.apk -b revanced-patches.jar --experimental \
+                               -e amoled -e custom-branding -e disable-fullscreen-panels -e hide-cast-button -e hide-watermark -e custom-playback-speed \
                                -a com.google.android.youtube.apk -o build/revanced-nonroot.apk
 else
     echo "Cannot find YouTube APK, skipping build"
@@ -82,11 +84,13 @@ echo "************************************"
 if [ -f "com.google.android.apps.youtube.music.apk" ]
 then
     echo "Building Root APK"
-    java -jar revanced-cli.jar -b revanced-patches.jar --mount \
+    java -jar revanced-cli.jar -b revanced-patches.jar --mount --experimental \
                                -e microg-support \
+                               -e tasteBuilder-remover -e exclusive-audio-playback \
                                -a com.google.android.apps.youtube.music.apk -o build/revanced-music-root.apk
     echo "Building Non-root APK"
-    java -jar revanced-cli.jar -b revanced-patches.jar \
+    java -jar revanced-cli.jar -b revanced-patches.jar --experimental \
+                               -e tasteBuilder-remover -e exclusive-audio-playback \
                                -a com.google.android.apps.youtube.music.apk -o build/revanced-music-nonroot.apk
 else
     echo "Cannot find YouTube Music APK, skipping build"
