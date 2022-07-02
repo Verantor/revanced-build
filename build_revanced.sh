@@ -68,11 +68,11 @@ then
     echo "Building Root APK"
     java -jar revanced-cli.jar -m revanced-integrations.apk -b revanced-patches.jar --mount --experimental \
                                -e microg-support \
-                               -e amoled -e custom-branding -e disable-fullscreen-panels -e hide-cast-button -e hide-watermark -e custom-playback-speed -e hide-shorts-button \
+                               -e amoled -e custom-branding -e hide-cast-button -e hide-watermark -e custom-playback-speed -e hide-shorts-button -e hide-autoplay-button -e disable-create-button \
                                -a com.google.android.youtube.apk -o build/revanced-root.apk
     echo "Building Non-root APK"
     java -jar revanced-cli.jar -m revanced-integrations.apk -b revanced-patches.jar --experimental \
-                               -e amoled -e custom-branding -e disable-fullscreen-panels -e hide-cast-button -e hide-watermark -e custom-playback-speed -e hide-shorts-button \
+                               -e amoled -e custom-branding -e hide-cast-button -e hide-watermark -e custom-playback-speed -e hide-shorts-button -e hide-autoplay-button -e disable-create-button \
                                -a com.google.android.youtube.apk -o build/revanced-nonroot.apk
 else
     echo "Cannot find YouTube APK, skipping build"
