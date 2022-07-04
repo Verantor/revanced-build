@@ -66,12 +66,12 @@ available_patches="-e amoled -e custom-branding -e disable-fullscreen-panels -e 
 if [ -f "com.google.android.youtube.apk" ]
 then
     echo "Building Root APK"
-    java -jar revanced-cli.jar -m revanced-integrations.apk -b revanced-patches.jar --mount --experimental \
+    java -jar revanced-cli.jar -m revanced-integrations.apk -b revanced-patches-custom.jar --mount --experimental \
                                -e microg-support \
                                -e amoled -e custom-branding -e hide-cast-button -e hide-watermark -e custom-playback-speed -e hide-shorts-button -e hide-autoplay-button -e disable-create-button \
                                -a com.google.android.youtube.apk -o build/revanced-root.apk
     echo "Building Non-root APK"
-    java -jar revanced-cli.jar -m revanced-integrations.apk -b revanced-patches.jar --experimental \
+    java -jar revanced-cli.jar -m revanced-integrations.apk -b revanced-patches-custom.jar --experimental \
                                -e amoled -e custom-branding -e hide-cast-button -e hide-watermark -e custom-playback-speed -e hide-shorts-button -e hide-autoplay-button -e disable-create-button \
                                -a com.google.android.youtube.apk -o build/revanced-nonroot.apk
 else
@@ -84,12 +84,12 @@ echo "************************************"
 if [ -f "com.google.android.apps.youtube.music.apk" ]
 then
     echo "Building Root APK"
-    java -jar revanced-cli.jar -b revanced-patches.jar --mount --experimental \
+    java -jar revanced-cli.jar -b revanced-patches-custom.jar --mount --experimental \
                                -e microg-support \
                                -e tasteBuilder-remover -e exclusive-audio-playback \
                                -a com.google.android.apps.youtube.music.apk -o build/revanced-music-root.apk
     echo "Building Non-root APK"
-    java -jar revanced-cli.jar -b revanced-patches.jar --experimental \
+    java -jar revanced-cli.jar -b revanced-patches-custom.jar --experimental \
                                -e tasteBuilder-remover -e exclusive-audio-playback \
                                -a com.google.android.apps.youtube.music.apk -o build/revanced-music-nonroot.apk
 else
